@@ -12,7 +12,7 @@
     --card-h-md:180px;
     --card-h-sm:160px;
   
-    --hero-image:url('background-image.png');
+    --hero-image:url('/assets/images/background.png');
   
     /* Press accent */
     --press-border:#111111;
