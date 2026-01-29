@@ -2,6 +2,10 @@
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
 import '../styles/tailwind.css';
+
+const basePath = import.meta.env.BASE_URL || '/';
+const homePath = basePath.endsWith('/') ? basePath : `${basePath}/`;
+const isHome = Astro.url.pathname === `homePath;
 ---
 <html lang="en">
     <head>
@@ -23,7 +27,7 @@ import '../styles/tailwind.css';
     <body class="text-slate-900">
         <!-- Header / Navigation -->
         <Navbar />
-        <main class={Astro.url.pathname === '/' ? '' : 'container mx-auto px-6 max-w-6xl py-12'}>
+        <main class={isHome ? '' : 'container mx-auto px-6 max-w-6xl py-12'}>
             <slot />
         </main>
         <Footer />
