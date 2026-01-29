@@ -1,0 +1,37 @@
+---
+import projectsData from '../../data/projectsData.json';
+type Projects = {
+    id: string;
+    title: string;
+    description: string;
+    image: string;
+    link: string;
+};
+export function getStaticPaths() {
+    const projectsList = projectsData as unknown as Projects[];
+    return projectsList.map((project) => ({
+        params: { slug: project.id },
+    }));
+}
+
+const { slug } = Astro.params;
+const project = (projectsData as unknown as Projects[]).find(project => project.id === slug);
+if (!project) {
+    console.error(`Project with id ${slug} not found`);
+    Astro.redirect('/projects');
+}
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<h1>Astro</h1>
+	</body>
+</html>
