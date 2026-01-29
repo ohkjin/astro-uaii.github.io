@@ -1,0 +1,21 @@
+﻿[
+  {
+    "id": "VIGILANT Weekly Update",
+    "title": "VIGILANT Weekly Update",
+    "menuTitle": "VIGILANT Weekly Update",
+    "dateISO": "2026-01-22",
+    "thumbnail": "/assets/images/research/1.jpg",
+    "desc": "This weekly update introduces new members of the VIGILANT research team and summarizes the current progress of the project, including recent technical milestones and upcoming publication plans.",
+    "research": [
+      {
+        "title": "VIGILANT Weekly Team Meeting",
+        "date": "January 22, 2026",
+        "desc": "Four new researchers from Professor Yoon Guk-jin’s laboratory have officially joined the VIGILANT project. The team has successfully completed improvements to the Neural Network and Reinforcement Learning policy, achieving performance comparable to a fixed-camera baseline. Based on these results, the team is currently preparing a paper for submission to IROS, with a target submission date in early March.",
+        "images": [
+          "/assets/images/research/1.jpg",
+          "/assets/images/research/1-1.jpg"
+        ]
+      }
+    ]
+  }
+]

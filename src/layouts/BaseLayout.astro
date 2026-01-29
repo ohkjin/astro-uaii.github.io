@@ -1,0 +1,43 @@
+---
+import Footer from "../components/Footer.astro";
+import Navbar from "../components/Navbar.astro";
+---
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title><slot name="title" /></title>
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+        <link rel="icon" href="assets/K-UAII_logo.jpg" />
+        <meta name="description" content="Urban AI Institute — research at the intersection of cities and AI" />
+
+        <!-- FullCalendar v6 CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.20/index.global.min.css" rel="stylesheet" />
+        <!-- FullCalendar v6 JS -->
+        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.20/index.global.min.js"></script>
+    
+    </head>
+    <body class="text-slate-900">
+        <!-- Header / Navigation -->
+        <Navbar />
+        <main class={Astro.url.pathname === '/' ? '' : 'container mx-auto px-6 max-w-6xl py-12'}>
+            <slot />
+        </main>
+        <Footer />
+    </body>   
+</html>
+
+
+<style>
+    body.page-transition {
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+
+    body.page-loaded {
+        opacity: 1;
+        transition: opacity 0.4s ease;
+    }
+</style>
