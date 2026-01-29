@@ -5,6 +5,9 @@ import Navbar from "../components/Navbar.astro";
 
 const basePath = import.meta.env.BASE_URL || '/';
 const isHome = Astro.url.pathname === basePath;
+console.log("isHome:", isHome);
+console.log("Astro.url.pathname:", Astro.url.pathname);
+console.log("basePath:", basePath);
 
 ---
 <html lang="en">
