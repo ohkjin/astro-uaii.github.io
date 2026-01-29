@@ -9,4 +9,6 @@ export default defineConfig({
     },
     // site: 'https://kaist-uaii.github.io',
     // base: 'kaist-uaii'
+     site: 'https://ohkjin.github.io',
+    base: 'astro-uaii.github.io'
 });
