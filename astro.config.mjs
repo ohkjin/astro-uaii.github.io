@@ -7,20 +7,23 @@ export default defineConfig({
     vite: {
         plugins: [tailwindcss()],
     },
-    // site: 'https://kaist-uaii.github.io',
-    // base: 'kaist-uaii'
-    site: 'https://ohkjin.github.io',
-    base: 'astro-uaii.github.io',
-    redirects: {
-   '/events.html': '/astro-uaii.github.io/events',
-   '/events': '/astro-uaii.github.io/events',
-   '/events-detail': '/astro-uaii.github.io/events-detail',
-   '/press-detail': '/astro-uaii.github.io/press-detail',
-   '/': '/astro-uaii.github.io/',
-   '/index.html': '/astro-uaii.github.io/',
-   '/events/events-detail/[...slug]': '/astro-uaii.github.io/events-detail/[...slug]',
-   '/events/press-detail/[...slug]': '/astro-uaii.github.io/press-detail/[...slug]',
-   '/events-detail.html': '/astro-uaii.github.io/events-detail',
-   '/press-detail.html': '/astro-uaii.github.io/press-detail',
-    }
+        // site: 'https://kaist-uaii.github.io',
+        // base: 'kaist-uaii'
+        // Final deployed URL for this project (include repo path for project pages)
+        site: 'https://ohkjin.github.io/astro-uaii.github.io/astro-uaii.github.io/',
+        // Base path should start and end with a slash for a GitHub Pages project site
+        // base: '/astro-uaii.github.io/',
+        // Redirects should point to root-relative routes (no repo prefix)
+        redirects: {
+            '/events.html': '/events',
+            // '/events': '/events',
+            // '/events-detail': '/events-detail',
+            // '/press-detail': '/press-detail',
+            // '/': '/',
+            '/index.html': '/',
+            // '/events/events-detail/[...slug]': '/events-detail/[...slug]',
+            // '/events/press-detail/[...slug]': '/press-detail/[...slug]',
+            '/events-detail.html': '/events-detail',
+            '/press-detail.html': '/press-detail',
+        }
 });
