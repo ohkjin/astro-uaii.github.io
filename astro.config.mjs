@@ -12,11 +12,15 @@ export default defineConfig({
     site: 'https://ohkjin.github.io',
     base: 'astro-uaii.github.io',
     redirects: {
+   '/events.html': '/astro-uaii.github.io/events',
    '/events': '/astro-uaii.github.io/events',
    '/events-detail': '/astro-uaii.github.io/events-detail',
    '/press-detail': '/astro-uaii.github.io/press-detail',
-   '/index': '/astro-uaii.github.io/',
-   '/events-detail/[...slug]': '/astro-uaii.github.io/events-detail/[...slug]',
-   '/press-detail/[...slug]': '/astro-uaii.github.io/press-detail/[...slug]',
+   '/': '/astro-uaii.github.io/',
+   '/index.html': '/astro-uaii.github.io/',
+   '/events/events-detail/[...slug]': '/astro-uaii.github.io/events-detail/[...slug]',
+   '/events/press-detail/[...slug]': '/astro-uaii.github.io/press-detail/[...slug]',
+   '/events-detail.html': '/astro-uaii.github.io/events-detail',
+   '/press-detail.html': '/astro-uaii.github.io/press-detail',
     }
 });
