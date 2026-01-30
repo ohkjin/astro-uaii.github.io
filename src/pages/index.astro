@@ -1,7 +1,7 @@
 ---
 import '../styles/style.css';
 import BaseLayout from '../layouts/BaseLayout.astro';
-const basePath = import.meta.env.BASE_URL || '/';
+
 
 // -------- Loading data -------- //
 import research from '../data/researchData.json';
@@ -140,7 +140,7 @@ const pressData = press as Press[];
                     <!-- Left: Recent Research -->
                     <div class="flex items-center justify-between mb-4">
                         <h3 class="text-lg font-bold text-slate-900">Research</h3>
-                        <a href=`${basePath}projects/?view=research#research-update` class="text-sm text-blue-600 hover:text-blue-800 font-medium">See all</a>
+                        <a href="projects.html?view=research#research-update" class="text-sm text-blue-600 hover:text-blue-800 font-medium">See all</a>
                     </div>
                     <div id="recent-research-list" class="space-y-3">
                         <!-- Recent events will be injected here -->
@@ -153,7 +153,7 @@ const pressData = press as Press[];
                     <!-- Right: Recent Events -->
                     <div class="flex items-center justify-between mb-4">
                         <h3 class="text-lg font-bold text-slate-900">Events</h3>
-                        <a href=`${basePath}events/` class="text-sm text-blue-600 hover:text-blue-800 font-medium">See all</a>
+                        <a href="press.html" class="text-sm text-blue-600 hover:text-blue-800 font-medium">See all</a>
                     </div>
                     <div id="recent-events-list" class="space-y-3">
                         <!-- Recent events will be injected here -->
@@ -189,7 +189,7 @@ const pressData = press as Press[];
             </div>
 
             <!--<div class="press-more">
-                <a class="btn view-more" href=`${basePath}events/`>View more</a>
+                <a class="btn view-more" href="press.html">View more</a>
             </div>-->
         </div>
     </section>
@@ -308,7 +308,7 @@ const pressData = press as Press[];
 		  `;
 				row.addEventListener('click', () => {
 					const id = encodeURIComponent(item.id);
-					window.location.href = `${basePath}projects/?view=research#research=${id}`;
+					window.location.href = `projects.html?view=research&research=${id}`;
 				});
 				recentResearchList.appendChild(row);
 			});
@@ -349,7 +349,7 @@ const pressData = press as Press[];
 		  </div>
 		`;
 			itemEl.addEventListener('click', () => {
-				window.location.href = `${basePath}events/events-detail/${encodeURIComponent(item.id)}`;
+				window.location.href = `events-detail.html?id=${encodeURIComponent(item.id)}`;
 			});
 			recentEventsList.appendChild(itemEl);
 		});
@@ -362,7 +362,7 @@ const pressData = press as Press[];
 		document.body.classList.add("page-transition");
 	
 		setTimeout(() => {
-			window.location.href = `${basePath}events/events-detail/${encodeURIComponent(eventId)}`;
+			window.location.href = `events-detail.html?id=${encodeURIComponent(eventId)}`;
 		}, 300); // CSS transition 시간과 맞춤
 	}
 	
@@ -416,7 +416,7 @@ const pressData = press as Press[];
 	
 				<!-- TEXT → 내부 press.html -->
 				<a class="press-body press-card-link"
-				   href="events/press/${item.id}"
+				   href="press-detail.html?id=${item.id}"
 				   aria-label="View article summary on UAII press page">
 					<p class="press-summary">
 						${displaySummary}
